@@ -1,12 +1,42 @@
 <header class="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-cream/85 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-    <a href="#home" class="font-black tracking-tight text-xl">Elektroservis <span class="text-honey">Žemlička</span></a>
+    <a href="#home" class="text-xl font-black tracking-tight" aria-label="Domů">Elektroservis <span class="text-honey">Žemlička</span></a>
     <nav class="hidden gap-7 text-sm font-semibold md:flex">
       <a href="#sluzby" class="hover:text-honey">Služby</a>
       <a href="#proc" class="hover:text-honey">Proč my</a>
       <a href="#cenik" class="hover:text-honey">Ceník</a>
       <a href="#kontakt" class="hover:text-honey">Kontakt</a>
     </nav>
-    <a class="btn btn-primary py-2.5" href="tel:+420606103986">Zavolat</a>
+    <div class="flex items-center gap-3">
+      <a class="btn btn-primary py-2.5" href="tel:+420606103986">Zavolat</a>
+      <button id="menu-toggle" class="flex flex-col gap-1.5 p-1 md:hidden" aria-label="Otevřít menu" aria-expanded="false">
+        <span class="block h-0.5 w-6 bg-ink transition-all"></span>
+        <span class="block h-0.5 w-6 bg-ink transition-all"></span>
+        <span class="block h-0.5 w-6 bg-ink transition-all"></span>
+      </button>
+    </div>
   </div>
+  <nav id="mobile-menu" class="hidden border-t border-black/5 bg-cream px-5 py-4 md:hidden">
+    <ul class="flex flex-col gap-4 text-sm font-semibold">
+      <li><a href="#sluzby" class="block hover:text-honey">Služby</a></li>
+      <li><a href="#proc" class="block hover:text-honey">Proč my</a></li>
+      <li><a href="#cenik" class="block hover:text-honey">Ceník</a></li>
+      <li><a href="#kontakt" class="block hover:text-honey">Kontakt</a></li>
+    </ul>
+  </nav>
 </header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

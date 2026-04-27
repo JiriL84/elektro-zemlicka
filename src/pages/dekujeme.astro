@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+---
+<BaseLayout title="Děkujeme – Elektroservis Žemlička" description="Vaše poptávka byla odeslána.">
+  <Header />
+  <main class="section flex flex-col items-center text-center">
+    <h1 class="text-4xl font-black tracking-tight md:text-5xl">Děkujeme za poptávku!</h1>
+    <p class="mt-6 max-w-md text-lg text-black/65">Ozveme se vám co nejdříve. Pokud potřebujete rychlou pomoc, zavolejte na <a href="tel:+420606103986" class="font-semibold underline">+420 606 103 986</a>.</p>
+    <a href="/" class="btn btn-primary mt-10">Zpět na hlavní stránku</a>
+  </main>
+  <footer class="bg-ink px-5 py-10 text-center text-sm text-white/70">
+    © {new Date().getFullYear()} Elektroservis Žemlička · elektro-zemlicka.cz
+  </footer>
+</BaseLayout>
