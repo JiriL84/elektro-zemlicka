@@ -1,4 +1,4 @@
-<form class="card grid gap-4" method="POST" action="https://formspree.io/f/xjgjdpvd">
+<form id="contact-form" class="card grid gap-4">
   <div class="grid gap-4 md:grid-cols-2">
     <label class="grid gap-2 text-sm font-semibold">Jméno
       <input class="rounded-2xl border border-black/10 px-4 py-3 font-normal outline-none focus:border-honey" name="name" required />
@@ -13,7 +13,31 @@
   <label class="grid gap-2 text-sm font-semibold">Popis závady
     <textarea class="min-h-32 rounded-2xl border border-black/10 px-4 py-3 font-normal outline-none focus:border-honey" name="message" required placeholder="Např. pračka nevypouští vodu, značka/model, lokalita..."></textarea>
   </label>
-  <input type="hidden" name="_next" value="https://elektro-zemlicka.cz/dekujeme" />
-  <button class="btn btn-primary w-full" type="submit">Odeslat poptávku</button>
+  <button id="submit-btn" class="btn btn-primary w-full" type="submit">Odeslat poptávku</button>
   <p class="text-xs text-black/50">Odesláním souhlasíte se zpracováním údajů pro vyřízení poptávky.</p>
 </form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Odesílám…';
+
+    const res = await fetch('https://formspree.io/f/xjgjdpvd', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+
+    if (res.ok) {
+      window.location.href = '/dekujeme';
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Odeslat poptávku';
+      alert('Něco se pokazilo. Zkuste to prosím znovu.');
+    }
+  });
+</script>
