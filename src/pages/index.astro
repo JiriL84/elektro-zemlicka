@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+<BaseLayout>
+  <Header />
+  <Hero />
+
+  <main>
+    <section id="sluzby" class="section">
+      <span class="badge">Služby</span>
+      <h2 class="mt-5 text-4xl font-black tracking-tight md:text-5xl">Co opravujeme</h2>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        {['Pračky a sušičky', 'Myčky nádobí', 'Elektrické trouby a varné desky', 'Lednice a mrazáky', 'Diagnostika závad', 'Pravidelná údržba'].map((item) => (
+          <div class="card">
+            <h3 class="text-xl font-extrabold">{item}</h3>
+            <p class="mt-3 text-black/65">Rychlá kontrola, doporučení opravy a domluva dalšího postupu.</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="proc" class="bg-white">
+      <div class="section grid gap-10 md:grid-cols-2">
+        <div>
+          <span class="badge bg-sun/40">Proč Elektroservis Žemlička</span>
+          <h2 class="mt-5 text-4xl font-black tracking-tight md:text-5xl">Férově, srozumitelně a bez skrytých překvapení.</h2>
+        </div>
+        <div class="grid gap-4">
+          <p class="rounded-3xl bg-cream p-6 text-lg leading-8">Nejdříve zjistíme skutečnou příčinu závady. Potom vysvětlíme možnosti opravy, cenu a dostupnost dílů.</p>
+          <p class="rounded-3xl bg-sun/40 p-6 text-lg leading-8">Web je připravený jako statický Astro projekt, takže je rychlý, levný na provoz a snadno rozšiřitelný.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cenik" class="section">
+      <span class="badge">Orientační ceník</span>
+      <div class="mt-8 overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-black/5">
+        <div class="grid grid-cols-2 border-b border-black/5 p-5 font-bold"><span>Úkon</span><span>Cena</span></div>
+        <div class="grid grid-cols-2 border-b border-black/5 p-5"><span>Diagnostika závady</span><span>od 500 Kč</span></div>
+        <div class="grid grid-cols-2 border-b border-black/5 p-5"><span>Doprava v okolí</span><span>dle vzdálenosti</span></div>
+        <div class="grid grid-cols-2 p-5"><span>Oprava</span><span>dle rozsahu a dílů</span></div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="section grid gap-10 md:grid-cols-[.9fr_1.1fr]">
+      <div>
+        <span class="badge">Kontakt</span>
+        <h2 class="mt-5 text-4xl font-black tracking-tight md:text-5xl">Napište nebo zavolejte.</h2>
+        <div class="mt-8 space-y-3 text-lg">
+          <p><strong>Telefon:</strong> <a href="tel:+420606103986" class="underline">+420 606 103 986</a></p>
+          <p><strong>Email:</strong> <a href="mailto:j.litomysky@seznam.cz" class="underline">j.litomysky@seznam.cz</a></p>
+          <p><strong>Působnost:</strong> Stonava a okolí</p>
+        </div>
+      </div>
+      <ContactForm />
+    </section>
+  </main>
+
+  <footer class="bg-ink px-5 py-10 text-center text-sm text-white/70">
+    © {new Date().getFullYear()} Elektroservis Žemlička · elektro-zemlicka.cz
+  </footer>
+</BaseLayout>

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html { scroll-behavior: smooth; }
+body { @apply bg-cream text-ink antialiased; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.section { @apply mx-auto max-w-6xl px-5 py-16 md:py-24; }
+.badge { @apply inline-flex rounded-full bg-white/70 px-4 py-2 text-sm font-semibold shadow-sm ring-1 ring-black/5; }
+.card { @apply rounded-3xl bg-white p-6 shadow-soft ring-1 ring-black/5; }
+.btn { @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-bold transition; }
+.btn-primary { @apply bg-ink text-white hover:-translate-y-0.5 hover:bg-black; }
+.btn-secondary { @apply bg-white text-ink ring-1 ring-black/10 hover:-translate-y-0.5; }

@@ -1,0 +1,18 @@
+<form class="card grid gap-4" method="POST" action="https://formspree.io/f/REPLACE_ME">
+  <div class="grid gap-4 md:grid-cols-2">
+    <label class="grid gap-2 text-sm font-semibold">Jméno
+      <input class="rounded-2xl border border-black/10 px-4 py-3 font-normal outline-none focus:border-honey" name="name" required />
+    </label>
+    <label class="grid gap-2 text-sm font-semibold">Telefon
+      <input class="rounded-2xl border border-black/10 px-4 py-3 font-normal outline-none focus:border-honey" type="tel" name="phone" required />
+    </label>
+  </div>
+  <label class="grid gap-2 text-sm font-semibold">E-mail
+    <input class="rounded-2xl border border-black/10 px-4 py-3 font-normal outline-none focus:border-honey" type="email" name="email" />
+  </label>
+  <label class="grid gap-2 text-sm font-semibold">Popis závady
+    <textarea class="min-h-32 rounded-2xl border border-black/10 px-4 py-3 font-normal outline-none focus:border-honey" name="message" required placeholder="Např. pračka nevypouští vodu, značka/model, lokalita..."></textarea>
+  </label>
+  <button class="btn btn-primary w-full" type="submit">Odeslat poptávku</button>
+  <p class="text-xs text-black/50">Odesláním souhlasíte se zpracováním údajů pro vyřízení poptávky.</p>
+</form>
