@@ -9,31 +9,42 @@ import ContactForm from '../components/ContactForm.astro';
   <Hero />
 
   <main>
-    <section id="sluzby" class="section">
-      <span class="badge">Služby</span>
-      <h2 class="mt-5 text-4xl font-black tracking-tight md:text-5xl">Co opravujeme</h2>
-      <div class="mt-10 grid gap-5 md:grid-cols-3">
-        {['Pračky a sušičky', 'Myčky nádobí', 'Elektrické trouby a varné desky', 'Lednice a mrazáky', 'Diagnostika závad', 'Pravidelná údržba'].map((item) => (
-          <div class="card">
-            <h3 class="text-xl font-extrabold">{item}</h3>
-            <p class="mt-3 text-black/65">Rychlá kontrola, doporučení opravy a domluva dalšího postupu.</p>
-          </div>
-        ))}
-      </div>
-    </section>
+  <section id="sluzby" class="section">
+    <span class="badge">Služby</span>
+    <h2 class="mt-5 text-4xl font-black tracking-tight md:text-5xl">Co nabízíme</h2>
+    <p class="mt-5 max-w-3xl text-lg leading-8 text-black/65">
+      Zajišťujeme opravy domácích spotřebičů, prodej bílé techniky a drobné elektroinstalační práce v domácnostech.
+    </p>
 
-    <section id="proc" class="bg-white">
-      <div class="section grid gap-10 md:grid-cols-2">
-        <div>
-          <span class="badge bg-sun/40">Proč Elektroservis Žemlička</span>
-          <h2 class="mt-5 text-4xl font-black tracking-tight md:text-5xl">Férově, srozumitelně a bez skrytých překvapení.</h2>
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      {[
+        ['Opravy spotřebičů', 'Pračky, sušičky, myčky, trouby, varné desky, lednice a mrazáky.'],
+        ['Diagnostika závad', 'Zjištění příčiny poruchy, doporučení opravy a předběžné nacenění dalšího postupu.'],
+        ['Prodej bílé techniky', 'Pomůžeme s výběrem vhodného spotřebiče podle potřeb domácnosti a možností instalace.'],
+        ['Drobné elektroinstalace', 'Výměna zásuvek, vypínačů, svítidel, žárovek a další menší elektro práce.'],
+        ['Nové zásuvky a kabeláž', 'Doplnění nové zásuvky, natažení kabelu nebo úprava jednoduchých rozvodů.'],
+        ['Pravidelná údržba', 'Kontrola, čištění a údržba spotřebičů pro delší životnost a bezpečný provoz.']
+      ].map(([title, text]) => (
+        <div class="card">
+          <h3 class="text-xl font-extrabold">{title}</h3>
+          <p class="mt-3 text-black/65">{text}</p>
         </div>
-        <div class="grid gap-4">
-          <p class="rounded-3xl bg-cream p-6 text-lg leading-8">Nejdříve zjistíme skutečnou příčinu závady. Potom vysvětlíme možnosti opravy, cenu a dostupnost dílů.</p>
-          <p class="rounded-3xl bg-sun/40 p-6 text-lg leading-8">Web je připravený jako statický Astro projekt, takže je rychlý, levný na provoz a snadno rozšiřitelný.</p>
-        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="proc" class="bg-white">
+    <div class="section grid gap-10 md:grid-cols-2">
+      <div>
+        <span class="badge bg-sun/40">Proč Elektroservis Žemlička</span>
+        <h2 class="mt-5 text-4xl font-black tracking-tight md:text-5xl">Férově, srozumitelně a bez skrytých překvapení.</h2>
       </div>
-    </section>
+      <div class="grid gap-4">
+        <p class="rounded-3xl bg-cream p-6 text-lg leading-8">Nejdříve zjistíme skutečnou příčinu závady. Potom vysvětlíme možnosti opravy, cenu a dostupnost dílů.</p>
+        <p class="rounded-3xl bg-sun/40 p-6 text-lg leading-8">Pomůžeme nejen s opravou spotřebiče, ale také s drobnými elektro pracemi a výběrem vhodné bílé techniky do domácnosti.</p>
+      </div>
+    </div>
+  </section>
 
     <section id="cenik" class="section">
       <span class="badge">Orientační ceník</span>
