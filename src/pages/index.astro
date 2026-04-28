@@ -37,12 +37,57 @@ import ContactForm from '../components/ContactForm.astro';
 
     <section id="cenik" class="section">
       <span class="badge">Orientační ceník</span>
+
       <div class="mt-8 overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-black/5">
-        <div class="grid grid-cols-2 border-b border-black/5 p-5 font-bold"><span>Úkon</span><span>Cena</span></div>
-        <div class="grid grid-cols-2 border-b border-black/5 p-5"><span>Diagnostika závady</span><span>od 500 Kč</span></div>
-        <div class="grid grid-cols-2 border-b border-black/5 p-5"><span>Doprava v okolí</span><span>dle vzdálenosti</span></div>
-        <div class="grid grid-cols-2 p-5"><span>Oprava</span><span>dle rozsahu a dílů</span></div>
+        <div class="grid grid-cols-2 border-b border-black/5 p-5 font-bold">
+          <span>Služba</span>
+          <span>Cena</span>
+        </div>
+
+        <div class="grid grid-cols-2 border-b border-black/5 p-5">
+          <span>Diagnostika závady</span>
+          <span>450 Kč</span>
+        </div>
+
+        <div class="grid grid-cols-2 border-b border-black/5 p-5">
+          <span>Výměna vnějších dílů bez rozebrání spotřebiče</span>
+          <span>640 Kč</span>
+        </div>
+
+        <div class="grid grid-cols-2 border-b border-black/5 p-5">
+          <span>Dílenská oprava řídící elektroniky</span>
+          <span>760 Kč</span>
+        </div>
+
+        <div class="grid grid-cols-2 border-b border-black/5 p-5">
+          <span>Oprava vnitřních částí spotřebiče</span>
+          <span>1 040 Kč</span>
+        </div>
+
+        <div class="grid grid-cols-2 border-b border-black/5 p-5">
+          <span>Složitá oprava (ložiska, buben, sušičky, kávovary)</span>
+          <span>2 250 Kč</span>
+        </div>
+
+        <div class="grid grid-cols-2 border-b border-black/5 p-5">
+          <span>Demontáž / montáž vestavných spotřebičů</span>
+          <span>200 Kč</span>
+        </div>
+
+        <div class="grid grid-cols-2 border-b border-black/5 p-5">
+          <span>Spotřební materiál, energie a voda</span>
+          <span>180 Kč</span>
+        </div>
+
+        <div class="grid grid-cols-2 p-5">
+          <span>Doprava / výjezd</span>
+          <span>dle vzdálenosti</span>
+        </div>
       </div>
+
+      <p class="mt-4 text-sm text-black/60">
+        Ceny náhradních dílů nejsou zahrnuty v ceně opravy. Přesná cena bude sdělena po diagnostice závady.
+      </p>
     </section>
 
     <section id="kontakt" class="section grid gap-10 md:grid-cols-[.9fr_1.1fr]">
