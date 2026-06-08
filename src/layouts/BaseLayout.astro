@@ -1,11 +1,48 @@
 ---
 import '../styles/global.css';
 const {
-  title = 'Elektroservis Žemlička',
-  description = 'Opravy praček, sušiček, myček a domácích spotřebičů.',
+  title = 'Oprava praček, sušiček a spotřebičů Ostrava – Elektroservis Žemlička',
+  description = 'Elektroservis Žemlička – rychlá oprava praček, sušiček, myček a domácích spotřebičů v Ostravě, Orlové, Karviné, Stonavě, Českém Těšíně a Třinci. Volejte +420 606 103 986.',
 } = Astro.props;
 const siteUrl = 'https://elektro-zemlicka.cz';
 const ogImage = `${siteUrl}/images/hero-washing-machine.jpeg`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Elektroservis Žemlička",
+  "description": "Opravy domácích spotřebičů – pračky, sušičky, myčky, trouby, lednice. Drobné elektroinstalační práce a prodej bílé techniky.",
+  "url": siteUrl,
+  "telephone": "+420606103986",
+  "email": "info@elektro-zemlicka.cz",
+  "image": ogImage,
+  "priceRange": "Kč",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Moravskoslezský kraj",
+    "addressCountry": "CZ"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Ostrava" },
+    { "@type": "City", "name": "Orlová" },
+    { "@type": "City", "name": "Karviná" },
+    { "@type": "City", "name": "Stonavá" },
+    { "@type": "City", "name": "Český Těšín" },
+    { "@type": "City", "name": "Třinec" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Opravy spotřebičů",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Oprava pračky" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Oprava sušičky" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Oprava myčky" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Oprava trouby" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Oprava lednice" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drobné elektroinstalace" } }
+    ]
+  }
+};
 ---
 <!doctype html>
 <html lang="cs">
@@ -16,6 +53,7 @@ const ogImage = `${siteUrl}/images/hero-washing-machine.jpeg`;
     <title>{title}</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={siteUrl} />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
@@ -24,13 +62,14 @@ const ogImage = `${siteUrl}/images/hero-washing-machine.jpeg`;
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="900" />
     <meta property="og:image:height" content="600" />
-
-    <link rel="canonical" href={siteUrl} />
+    <meta property="og:locale" content="cs_CZ" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <slot />
